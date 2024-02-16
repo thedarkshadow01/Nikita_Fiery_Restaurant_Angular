@@ -1,0 +1,35 @@
+
+  *{
+    box-sizing: border-box;
+  }
+
+  body{
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+  }
+
+  header{
+    background: wheat;
+    padding: 0;
+    border-bottom: 1px solid red;
+  }
+
+  a:hover{
+    background: #C7C8CC;
+    padding: 18px;
+  }
+
+  .container{
+    margin: 0;
+    display: flex;
+    justify-content:space-between;
+  }
+  nav ul{
+    list-style-type: none;
+    margin: 0;
+  }
+  nav ul li a{
+    padding: 18px;
+    display: inline-block;
+  }

@@ -1,0 +1,11 @@
+#foot{
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+   padding: 10px;
+    position: relative;
+}
+p{
+    color: white;
+}

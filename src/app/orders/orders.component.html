@@ -1,0 +1,86 @@
+<div class="ima">
+<div class="container">
+    <button (click)="getAllOrders()" class="btn btn-info">Get All Orders</button>
+        <button (click)="click()" class="btn btn-outline-info">Place Order</button>
+        <br>
+        <p *ngIf="isadd; then myif; else myedit"> </p>
+        <ng-template #myif>
+            <div class="form-group">
+                <label for="name">Order No.</label>
+                <input id="name" [(ngModel)]="jdata.OrdNo" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="name">Contact Name</label>
+                <input id="name" [(ngModel)]="jdata.name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="age">Date</label>
+                <input id="age" [(ngModel)]="jdata.date" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="gender">Items</label>
+                <input id="gender" [(ngModel)]="jdata.Items" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="gender">Total</label>
+                <input id="gender" [(ngModel)]="jdata.total" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="gender">Tax</label>
+                <input id="gender" [(ngModel)]="jdata.tax" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="gender">Grand Total</label>
+                <input id="gender" [(ngModel)]="jdata.gtotal" class="form-control">
+            </div>
+                <button type="submit" class="btn btn-success" (click)="addOrder()">Save</button>
+        </ng-template>
+    
+        <ng-template #myedit>
+            
+                <div class="form-group">
+                    <label for="name">ID:</label>
+                    <input id="name" [(ngModel)]="jdata.OrdNo" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input id="name" [(ngModel)]="jdata.name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input id="age" [(ngModel)]="jdata.date" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <input id="gender" [(ngModel)]="jdata.Items" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-success"  (click)="updateOrder(jdata.OrdNo, jdata)">Update Order</button>
+      
+        </ng-template>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Order No</th>
+                    <th>Contact Name</th>
+                    <th>Date</th>
+                    <th>Items</th>
+                    <th>Total</th>
+                    <th>Tax</th>
+                    <th>Grand Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let a of order">
+                    <td>{{a.Ordno}}</td>
+                    <td>{{a.name}}</td>
+                    <td>{{a.date}}</td>
+                    <td>{{a.Items}}</td>
+                    <td>{{a.total}}</td>
+                    <td>{{a.tax}}</td>
+                    <td>{{a.gtotal}}</td>
+                    <td><button class="btn btn-warning" (click)="updatefetch(a.OrdNo)">View Order</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>  
+</div>
